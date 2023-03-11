@@ -38,16 +38,19 @@ export class GithubApiService {
     return await response.json()
   }
 
-  public searchUser = async ({
-    q,
-    per_page,
-  }: SearchParams): Promise<SearchUsersResult> =>
+  public searchUsers = async (
+    { q, per_page }: SearchParams,
+    options?: RequestInit
+  ): Promise<SearchUsersResult> =>
     await this.fetch(
       `/search/users?q=${q}${
         per_page !== undefined ? `&per_page=${per_page}` : ''
-      }`
+      }`,
+      options
     )
 
-  public usersRepos = async ({ login }: UsersParams): Promise<ReposResult> =>
-    await this.fetch(`/users/${login}/repos`)
+  public usersRepos = async (
+    { login }: UsersParams,
+    options?: RequestInit
+  ): Promise<ReposResult> => await this.fetch(`/users/${login}/repos`, options)
 }

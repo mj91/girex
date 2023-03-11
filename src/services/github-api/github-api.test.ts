@@ -19,7 +19,7 @@ describe('GithubApiService', () => {
       })
 
       it('should make a proper call', () => {
-        githubApiService.searchUser({ q: 'users' })
+        githubApiService.searchUsers({ q: 'users' })
 
         expect(fetchMock).toHaveBeenCalledWith(
           'https://api.github.com/search/users?q=users',
@@ -28,7 +28,7 @@ describe('GithubApiService', () => {
       })
 
       it('should pass page limit', () => {
-        githubApiService.searchUser({ q: 'users', per_page: 5 })
+        githubApiService.searchUsers({ q: 'users', per_page: 5 })
 
         expect(fetchMock).toHaveBeenCalledWith(
           'https://api.github.com/search/users?q=users&per_page=5',
@@ -37,7 +37,7 @@ describe('GithubApiService', () => {
       })
 
       it('should return parsed results', async () => {
-        const result = await githubApiService.searchUser({ q: 'users' })
+        const result = await githubApiService.searchUsers({ q: 'users' })
         expect(jsonMock).toHaveBeenCalled()
         expect(result).toEqual(mockResult)
       })
@@ -54,7 +54,7 @@ describe('GithubApiService', () => {
         })
 
         await expect(
-          githubApiService.searchUser({ q: 'users' })
+          githubApiService.searchUsers({ q: 'users' })
         ).rejects.toThrow('API error')
       })
 
@@ -62,7 +62,7 @@ describe('GithubApiService', () => {
         fetchMock.mockResolvedValueOnce({ ok: false, status: 500 })
 
         await expect(
-          githubApiService.searchUser({ q: 'users' })
+          githubApiService.searchUsers({ q: 'users' })
         ).rejects.toThrow('500')
       })
 
@@ -70,7 +70,7 @@ describe('GithubApiService', () => {
         fetchMock.mockRejectedValueOnce(new Error('Unknown error'))
 
         await expect(
-          githubApiService.searchUser({ q: 'users' })
+          githubApiService.searchUsers({ q: 'users' })
         ).rejects.toThrow('Unknown error')
       })
     })
