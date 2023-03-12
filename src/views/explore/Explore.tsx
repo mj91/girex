@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid'
 import { useState } from 'react'
-import { SearchUserForm } from '../../forms/search-user-form/SearchUserForm'
-import { SearchUserResults } from '../../search-users-results/SearchUserResults'
+import { SearchUserForm } from '../../components/forms/search-user-form/SearchUserForm'
+import { SearchUserResults } from '../../containers/search-users-results/SearchUserResults'
 
 export const Explore = () => {
   const [username, setUsername] = useState<string>()

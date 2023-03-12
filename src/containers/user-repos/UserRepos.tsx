@@ -1,7 +1,7 @@
 import { Grid, LinearProgress } from '@mui/material'
 import { useUsersRepos } from '../../contexts/github'
 import { User } from '../../services/github-api'
-import { Repository } from '../repository/Repository'
+import { Repository } from '../../components/repository/Repository'
 
 export const UserRepos = ({ login }: Pick<User, 'login'>) => {
   const { data, isLoading, error } = useUsersRepos(login)

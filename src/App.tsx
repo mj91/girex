@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import { Explore } from './components/views/explore/Explore'
+import { Explore } from './views/explore/Explore'
 import { GithubProvider } from './contexts/github/github'
 import { theme } from './theme'
 

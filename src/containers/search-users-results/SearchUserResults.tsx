@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import LinearProgress from '@mui/material/LinearProgress'
 import { useSearchUsers } from '../../contexts/github'
-import { UsersList } from '../users-list/UsersList'
+import { UsersList } from '../../components/users-list/UsersList'
 import { grey } from '@mui/material/colors'
 
 export const SearchUserResults = ({ username }: { username: string }) => {
