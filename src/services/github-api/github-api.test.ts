@@ -81,6 +81,7 @@ describe('GithubApiService', () => {
       const mockResult: ReposResult = [
         {
           name: 'girex',
+          html_url: 'https://github.com/mj91/girex',
           description: 'Github repositories explorer',
           stargazers_count: 9000,
         },
