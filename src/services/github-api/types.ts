@@ -5,7 +5,7 @@ export type User = {
   [key: string]: unknown
 }
 
-export type SearchUsersResult = User[]
+export type SearchUsersResult = { items: User[] }
 
 export interface SearchUsers {
   (params: SearchParams, options: RequestInit): Promise<SearchUsersResult>

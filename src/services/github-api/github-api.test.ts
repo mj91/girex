@@ -10,7 +10,7 @@ describe('GithubApiService', () => {
 
   describe('searchUsers', () => {
     describe('onSuccess', () => {
-      const mockResult: SearchUsersResult = [{ login: 'mj91' }]
+      const mockResult: SearchUsersResult = { items: [{ login: 'mj91' }] }
       const jsonMock = jest.fn()
 
       beforeEach(() => {
